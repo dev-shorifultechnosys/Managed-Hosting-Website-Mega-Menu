@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'corefinity-blue': '#0066CC',
+                        'corefinity-dark': '#1a1a2e',
+                        'corefinity-light': '#f8f9fa',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>window.FontAwesomeConfig = { autoReplaceSvg: 'nest'};</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        ::-webkit-scrollbar { display: none;}
+        .animate-scroll {
+            animation: scroll 30s linear infinite;
+        }
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .mega-menu {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+        }
+        .mega-menu.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body class="font-sans bg-white">
+
+<header id="header" class="fixed w-full top-0 z-50 bg-white shadow-sm">
+    <div class="container mx-auto px-6">
+        <div class="flex items-center justify-between h-20">
+            <div class="flex items-center space-x-12">
+                <a href="#" class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-corefinity-blue rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">C</span>
+                    </div>
+                    <span class="text-2xl font-bold text-corefinity-dark">Corefinity</span>
+                </a>
+                
+                <nav class="hidden lg:flex items-center space-x-8">
+                    <div class="relative group">
+                        <button class="flex items-center space-x-1 text-gray-700 hover:text-corefinity-blue font-medium transition-colors">
+                            <span>Solutions</span>
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </button>
+                        <div class="mega-menu absolute left-0 top-full mt-0 bg-white shadow-2xl rounded-lg w-screen max-w-6xl -ml-40 group-hover:active">
+                            <div class="p-8 grid grid-cols-4 gap-8">
+                                <div>
+                                    <h3 class="font-bold text-corefinity-dark mb-4 text-sm uppercase tracking-wide">Platforms</h3>
+                                    <ul class="space-y-3">
+                                        <li><a href="#" class="flex items-start space-x-3 text-gray-600 hover:text-corefinity-blue transition-colors group">
+                                            <i class="fas fa-shopping-cart text-corefinity-blue mt-1"></i>
+                                            <div>
+                                                <div class="font-medium text-gray-900 group-hover:text-corefinity-blue">Magento</div>
+                                                <div class="text-xs text-gray-500">Enterprise eCommerce</div>
+                                            </div>
+                                        </a></li>
+                                        <li><a href="#" class="flex items-start space-x-3 text-gray-600 hover:text-corefinity-blue transition-colors group">
+                                            <i class="fas fa-code text-corefinity-blue mt-1"></i>
+                                            <div>
+                                                <div class="font-medium text-gray-900 group-hover:text-corefinity-blue">Laravel</div>
+                                                <div class="text-xs text-gray-500">PHP Framework</div>
+                                            </div>
+                                        </a></li>
+                                        <li><a href="#" class="flex items-start space-x-3 text-gray-600 hover:text-corefinity-blue transition-colors group">
+                                            <i class="fas fa-store text-corefinity-blue mt-1"></i>
+                                            <div>
+                                                <div class="font-medium text-gray-900 group-hover:text-corefinity-blue">Shopware</div>
+                                                <div class="text-xs text-gray-500">Modern Commerce</div>
+                                            </div>
+                                        </a></li>
+                                        <li><a href="#" class="flex items-start space-x-3 text-gray-600 hover:text-corefinity-blue transition-colors group">
+                                            <i class="fas fa-wordpress text-corefinity-blue mt-1"></i>
+                                            <div>
+                                                <div class="font-medium text-gray-900 group-hover:text-corefinity-blue">WordPress</div>
+                                                <div class="text-xs text-gray-500">CMS Platform</div>
+                                            </div>
+                                        </a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-corefinity-dark mb-4 text-sm uppercase tracking-wide">Services</h3>
+                                    <ul class="space-y-3">
+                                        <li><a href="#" class="flex items-start space-x-3 text-gray-600 hover:text-corefinity-blue transition-colors group">
+                                            <i class="fas fa-cloud text-corefinity-blue mt-1"></i>
+                                            <div>
+                                                <div class="font-medium text-gray-900 group-hover:text-corefinity-blue">Cloud Hosting</div>
+                                                <div class="text-xs text-gray-500">Scalable infrastructure</div>
+                                            </div>
+                                        </a></li>
+                                        <li><a href="#" class="flex items-start space-x-3 text-gray-600 hover:text-corefinity-blue transition-colors group">
+                                            <i class="fas fa-server text-corefinity-blue mt-1"></i>
+                                            <div>
+                                                <div class="font-medium text-gray-900 group-hover:text-corefinity-blue">Managed Hosting</div>
+                                                <div class="text-xs text-gray-500">Fully managed services</div>
+                                            </div>
+                                        </a></li>
+                                        <li><a href="#" class="flex items-start space-x-3 text-gray-600 hover:text-corefinity-blue transition-colors group">
+                                            <i class="fas fa-database text-corefinity-blue mt-1"></i>
+                                            <div>
+                                                <div class="font-medium text-gray-900 group-hover:text-corefinity-blue">Database Management</div>
+                                                <div class="text-xs text-gray-500">Optimized performance</div>
+                                            </div>
+                                        </a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-corefinity-dark mb-4 text-sm uppercase tracking-wide">Industries</h3>
+                                    <ul class="space-y-3">
+                                        <li><a href="#" class="flex items-start space-x-3 text-gray-600 hover:text-corefinity-blue transition-colors group">
+                                            <i class="fas fa-building text-corefinity-blue mt-1"></i>
+                                            <div>
+                                                <div class="font-medium text-gray-900 group-hover:text-corefinity-blue">Enterprise</div>
+                                                <div class="text-xs text-gray-500">Large scale solutions</div>
+                                            </div>
+                                        </a></li>
+                                        <li><a href="#" class="flex items-start space-x-3 text-gray-600 hover:text-corefinity-blue transition-colors group">
+                                            <i class="fas fa-briefcase text-corefinity-blue mt-1"></i>
+                                            <div>
+                                                <div class="font-medium text-gray-900 group-hover:text-corefinity-blue">Agency</div>
+                                                <div class="text-xs text-gray-500">Partner solutions</div>
+                                            </div>
+                                        </a></li>
+                                        <li><a href="#" class="flex items-start space-x-3 text-gray-600 hover:text-corefinity-blue transition-colors group">
+                                            <i class="fas fa-rocket text-corefinity-blue mt-1"></i>
+                                            <div>
+                                                <div class="font-medium text-gray-900 group-hover:text-corefinity-blue">Startups</div>
+                                                <div class="text-xs text-gray-500">Growth focused</div>
+                                            </div>
+                                        </a></li>
+                                    </ul>
+                                </div>
+                                <div class="bg-gradient-to-br from-corefinity-blue to-blue-700 rounded-lg p-6 text-white">
+                                    <h3 class="font-bold mb-2">Need Help Choosing?</h3>
+                                    <p class="text-sm text-blue-100 mb-4">Our experts can guide you to the perfect solution for your needs.</p>
+                                    <a href="#" class="inline-flex items-center space-x-2 bg-white text-corefinity-blue px-4 py-2 rounded-lg font-medium text-sm hover:bg-blue-50 transition-colors">
+                                        <span>Talk to an Expert</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="text-gray-700 hover:text-corefinity-blue font-medium transition-colors">Agency</a>
+                    <a href="#" class="text-gray-700 hover:text-corefinity-blue font-medium transition-colors">Case Studies</a>
+                    <a href="#" class="text-gray-700 hover:text-corefinity-blue font-medium transition-colors">Performance</a>
+                    <a href="#" class="text-gray-700 hover:text-corefinity-blue font-medium transition-colors">Support</a>
+                    <a href="#" class="text-gray-700 hover:text-corefinity-blue font-medium transition-colors">About</a>
+                </nav>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                <a href="#" class="hidden lg:inline-flex text-gray-700 hover:text-corefinity-blue font-medium transition-colors">Login</a>
+                <a href="#" class="bg-corefinity-blue text-white px-6 py-2.5 rounded-lg font-medium hover:bg-blue-700 transition-colors">Chat to an Expert</a>
+                <button class="lg:hidden text-gray-700">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main id="main-content" class="pt-20">
+    <section id="hero-section" class="relative h-[700px] flex items-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/d061bef702-98274e50827be89cd3a5.png" alt="modern data center with glowing blue servers, futuristic technology infrastructure, dark background with blue accent lighting, professional photography" />
+            <div class="absolute inset-0 bg-gradient-to-r from-corefinity-dark/95 via-corefinity-dark/85 to-transparent"></div>
+        </div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center space-x-2 bg-corefinity-blue/20 backdrop-blur-sm border border-corefinity-blue/30 rounded-full px-4 py-2 mb-6">
+                    <span class="w-2 h-2 bg-corefinity-blue rounded-full animate-pulse"></span>
+                    <span class="text-corefinity-blue text-sm font-medium">Platform Agnostic Cloud Specialists</span>
+                </div>
+                
+                <h1 class="text-6xl font-bold text-white mb-6 leading-tight">
+                    Modernizing Hosting for <span class="text-corefinity-blue">Mission-Critical</span> Applications
+                </h1>
+                
+                <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+                    We are platform agnostic cloud and infrastructure specialists, modernizing hosting for mission-critical and eCommerce applications. Built by developers, for developers.
+                </p>
+                
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="bg-corefinity-blue text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors inline-flex items-center space-x-2 shadow-lg shadow-corefinity-blue/30">
+                        <span>Chat to an Expert</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#" class="bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/20 transition-colors inline-flex items-center space-x-2 border border-white/20">
+                        <i class="fas fa-play-circle"></i>
+                        <span>Watch Demo</span>
+                    </a>
+                </div>
+                
+                <div class="flex items-center space-x-8 mt-12">
+                    <div class="flex items-center space-x-3">
+                        <div class="flex -space-x-2">
+                            <img src="https://leanlivingjourney.com/wp-content/uploads/2025/10/images-6.jpeg" class="w-10 h-10 rounded-full border-2 border-white" alt="User">
+                            <img src="https://leanlivingjourney.com/wp-content/uploads/2025/10/images.jpeg" class="w-10 h-10 rounded-full border-2 border-white" alt="User">
+                            <img src="https://leanlivingjourney.com/wp-content/uploads/2025/10/images-1.jpeg" class="w-10 h-10 rounded-full border-2 border-white" alt="User">
+                        </div>
+                        <div class="text-white">
+                            <div class="font-semibold">500+ Clients</div>
+                            <div class="text-sm text-gray-300">Trust Corefinity</div>
+                        </div>
+                    </div>
+                    <div class="h-12 w-px bg-white/20"></div>
+                    <div class="text-white">
+                        <div class="font-semibold">99.99% Uptime</div>
+                        <div class="text-sm text-gray-300">Guaranteed SLA</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="trusted-partners" class="py-16 bg-corefinity-light border-y border-gray-200">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-8">
+                <h2 class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Trusted by Industry Leaders</h2>
+            </div>
+            <div class="relative overflow-hidden">
+                <div class="flex animate-scroll">
+                    <div class="flex items-center space-x-16 pr-16">
+                        <div class="flex items-center space-x-3 grayscale hover:grayscale-0 transition-all">
+                            <i class="fab fa-magento text-4xl text-gray-400"></i>
+                            <span class="text-xl font-semibold text-gray-600">Magento</span>
+                        </div>
+                        <div class="flex items-center space-x-3 grayscale hover:grayscale-0 transition-all">
+                            <i class="fab fa-adobe text-4xl text-gray-400"></i>
+                            <span class="text-xl font-semibold text-gray-600">Adobe</span>
+                        </div>
+                        <div class="flex items-center space-x-3 grayscale hover:grayscale-0 transition-all">
+                            <i class="fab fa-aws text-4xl text-gray-400"></i>
+                            <span class="text-xl font-semibold text-gray-600">AWS</span>
+                        </div>
+                        <div class="flex items-center space-x-3 grayscale hover:grayscale-0 transition-all">
+                            <i class="fab fa-google text-4xl text-gray-400"></i>
+                            <span class="text-xl font-semibold text-gray-600">Google Cloud</span>
+                        </div>
+                        <div class="flex items-center space-x-3 grayscale hover:grayscale-0 transition-all">
+                            <i class="fab fa-microsoft text-4xl text-gray-400"></i>
+                            <span class="text-xl font-semibold text-gray-600">Azure</span>
+                        </div>
+                        <div class="flex items-center space-x-3 grayscale hover:grayscale-0 transition-all">
+                            <i class="fab fa-shopify text-4xl text-gray-400"></i>
+                            <span class="text-xl font-semibold text-gray-600">Shopify</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-16 pr-16">
+                        <div class="flex items-center space-x-3 grayscale hover:grayscale-0 transition-all">
+                            <i class="fab fa-magento text-4xl text-gray-400"></i>
+                            <span class="text-xl font-semibold text-gray-600">Magento</span>
+                        </div>
+                        <div class="flex items-center space-x-3 grayscale hover:grayscale-0 transition-all">
+                            <i class="fab fa-adobe text-4xl text-gray-400"></i>
+                            <span class="text-xl font-semibold text-gray-600">Adobe</span>
+                        </div>
+                        <div class="flex items-center space-x-3 grayscale hover:grayscale-0 transition-all">
+                            <i class="fab fa-aws text-4xl text-gray-400"></i>
+                            <span class="text-xl font-semibold text-gray-600">AWS</span>
+                        </div>
+                        <div class="flex items-center space-x-3 grayscale hover:grayscale-0 transition-all">
+                            <i class="fab fa-google text-4xl text-gray-400"></i>
+                            <span class="text-xl font-semibold text-gray-600">Google Cloud</span>
+                        </div>
+                        <div class="flex items-center space-x-3 grayscale hover:grayscale-0 transition-all">
+                            <i class="fab fa-microsoft text-4xl text-gray-400"></i>
+                            <span class="text-xl font-semibold text-gray-600">Azure</span>
+                        </div>
+                        <div class="flex items-center space-x-3 grayscale hover:grayscale-0 transition-all">
+                            <i class="fab fa-shopify text-4xl text-gray-400"></i>
+                            <span class="text-xl font-semibold text-gray-600">Shopify</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="supported-platforms" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-corefinity-dark mb-4">Supported Platforms & Applications</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">We specialize in hosting and optimizing the most demanding eCommerce and enterprise platforms</p>
+            </div>
+            
+            <div class="relative overflow-hidden py-8">
+                <div class="flex animate-scroll">
+                    <div class="flex items-center space-x-12 pr-12">
+                        <div class="flex flex-col items-center space-y-3 min-w-[140px]">
+                            <div class="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center shadow-lg">
+                                <i class="fab fa-magento text-3xl text-white"></i>
+                            </div>
+                            <span class="font-semibold text-gray-700">Magento</span>
+                        </div>
+                        <div class="flex flex-col items-center space-y-3 min-w-[140px]">
+                            <div class="w-20 h-20 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center shadow-lg">
+                                <i class="fab fa-laravel text-3xl text-white"></i>
+                            </div>
+                            <span class="font-semibold text-gray-700">Laravel</span>
+                        </div>
+                        <div class="flex flex-col items-center space-y-3 min-w-[140px]">
+                            <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg">
+                                <i class="fas fa-shopping-bag text-3xl text-white"></i>
+                            </div>
+                            <span class="font-semibold text-gray-700">Shopware</span>
+                        </div>
+                        <div class="flex flex-col items-center space-y-3 min-w-[140px]">
+                            <div class="w-20 h-20 bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl flex items-center justify-center shadow-lg">
+                                <i class="fab fa-wordpress text-3xl text-white"></i>
+                            </div>
+                            <span class="font-semibold text-gray-700">WordPress</span>
+                        </div>
+                        <div class="flex flex-col items-center space-y-3 min-w-[140px]">
+                            <div class="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg">
+                                <i class="fab fa-symfony text-3xl text-white"></i>
+                            </div>
+                            <span class="font-semibold text-gray-700">Symfony</span>
+                        </div>
+                        <div class="flex flex-col items-center space-y-3 min-w-[140px]">
+                            <div class="w-20 h-20 bg-gradient-to-br from-red-600 to-red-700 rounded-2xl flex items-center justify-center shadow-lg">
+                                <i class="fab fa-adobe text-3xl text-white"></i>
+                            </div>
+                            <span class="font-semibold text-gray-700">Adobe Commerce</span>
+                        </div>
+                        <div class="flex flex-col items-center space-y-3 min-w-[140px]">
+                            <div class="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center shadow-lg">
+                                <i class="fas fa-shopping-cart text-3xl text-white"></i>
+                            </div>
+                            <span class="font-semibold text-gray-700">PrestaShop</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-12 pr-12">
+                        <div class="flex flex-col items-center space-y-3 min-w-[140px]">
+                            <div class="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center shadow-lg">
+                                <i class="fab fa-magento text-3xl text-white"></i>
+                            </div>
+                            <span class="font-semibold text-gray-700">Magento</span>
+                        </div>
+                        <div class="flex flex-col items-center space-y-3 min-w-[140px]">
+                            <div class="w-20 h-20 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center shadow-lg">
+                                <i class="fab fa-laravel text-3xl text-white"></i>
+                            </div>
+                            <span class="font-semibold text-gray-700">Laravel</span>
+                        </div>
+                        <div class="flex flex-col items-center space-y-3 min-w-[140px]">
+                            <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg">
+                                <i class="fas fa-shopping-bag text-3xl text-white"></i>
+                            </div>
+                            <span class="font-semibold text-gray-700">Shopware</span>
+                        </div>
+                        <div class="flex flex-col items-center space-y-3 min-w-[140px]">
+                            <div class="w-20 h-20 bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl flex items-center justify-center shadow-lg">
+                                <i class="fab fa-wordpress text-3xl text-white"></i>
+                            </div>
+                            <span class="font-semibold text-gray-700">WordPress</span>
+                        </div>
+                        <div class="flex flex-col items-center space-y-3 min-w-[140px]">
+                            <div class="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg">
+                                <i class="fab fa-symfony text-3xl text-white"></i>
+                            </div>
+                            <span class="font-semibold text-gray-700">Symfony</span>
+                        </div>
+                        <div class="flex flex-col items-center space-y-3 min-w-[140px]">
+                            <div class="w-20 h-20 bg-gradient-to-br from-red-600 to-red-700 rounded-2xl flex items-center justify-center shadow-lg">
+                                <i class="fab fa-adobe text-3xl text-white"></i>
+                            </div>
+                            <span class="font-semibold text-gray-700">Adobe Commerce</span>
+                        </div>
+                        <div class="flex flex-col items-center space-y-3 min-w-[140px]">
+                            <div class="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center shadow-lg">
+                                <i class="fas fa-shopping-cart text-3xl text-white"></i>
+                            </div>
+                            <span class="font-semibold text-gray-700">PrestaShop</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="built-by-developers" class="py-24 bg-gradient-to-br from-corefinity-dark via-gray-900 to-corefinity-dark">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <div class="inline-flex items-center space-x-2 bg-corefinity-blue/20 backdrop-blur-sm border border-corefinity-blue/30 rounded-full px-4 py-2 mb-6">
+                        <i class="fas fa-code text-corefinity-blue"></i>
+                        <span class="text-corefinity-blue text-sm font-medium">Our Story</span>
+                    </div>
+                    
+                    <h2 class="text-4xl font-bold text-white mb-6">Built by <span class="text-corefinity-blue">(ex) Developers</span> for Developers</h2>
+                    
+                    <div class="space-y-4 text-gray-300 text-lg leading-relaxed">
+                        <p>Corefinity was founded by Magento developers who were frustrated with slow, inflexible hosting and set out to build the fastest, most reliable eCommerce stack.</p>
+                        
+                        <p>Our platform is engineered by certified developers and engineers with years of hands-on experience supporting Magento, Shopware and other leading platforms.</p>
+                        
+                        <p>Every part of the stack is developer and agency friendly, with the tools, documentation and support you need to ship quickly and scale confidently.</p>
+                        
+                        <p class="font-semibold text-white">This is hosting created by people who used to build stores every day, trusted by hundreds of merchants to power secure and successful eCommerce.</p>
+                    </div>
+                    
+                    <a href="#" class="inline-flex items-center space-x-2 mt-8 text-corefinity-blue font-semibold hover:text-blue-400 transition-colors group">
+                        <span>Read more about our story</span>
+                        <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+                
+                <div class="relative">
+                    <div class="absolute inset-0 bg-gradient-to-br from-corefinity-blue/20 to-purple-600/20 rounded-3xl blur-3xl"></div>
+                    <div class="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="bg-gradient-to-br from-corefinity-blue to-blue-700 rounded-xl p-6 text-white">
+                                <i class="fas fa-users text-3xl mb-4 opacity-80"></i>
+                                <div class="text-3xl font-bold mb-1">500+</div>
+                                <div class="text-sm text-blue-100">Active Clients</div>
+                            </div>
+                            <div class="bg-gradient-to-br from-purple-600 to-purple-700 rounded-xl p-6 text-white">
+                                <i class="fas fa-clock text-3xl mb-4 opacity-80"></i>
+                                <div class="text-3xl font-bold mb-1">7 min</div>
+                                <div class="text-sm text-purple-100">Response Time</div>
+                            </div>
+                            <div class="bg-gradient-to-br from-green-600 to-green-700 rounded-xl p-6 text-white">
+                                <i class="fas fa-check-circle text-3xl mb-4 opacity-80"></i>
+                                <div class="text-3xl font-bold mb-1">99.99%</div>
+                                <div class="text-sm text-green-100">Uptime SLA</div>
+                            </div>
+                            <div class="bg-gradient-to-br from-orange-600 to-orange-700 rounded-xl p-6 text-white">
+                                <i class="fas fa-headset text-3xl mb-4 opacity-80"></i>
+                                <div class="text-3xl font-bold mb-1">24/7</div>
+                                <div class="text-sm text-orange-100">UK Support</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="trusted-by-clients" class="py-16 bg-white border-y border-gray-200">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-8">
+                <h2 class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Trusted By</h2>
+            </div>
+            <div class="relative overflow-hidden">
+                <div class="flex animate-scroll">
+                    <div class="flex items-center space-x-20 pr-20">
+                        <div class="flex items-center space-x-3 grayscale hover:grayscale-0 transition-all opacity-60 hover:opacity-100">
+                            <i class="fas fa-car text-4xl text-gray-600"></i>
+                            <span class="text-xl font-semibold text-gray-700">Mercedes-Benz</span>
+                        </div>
+                        <div class="flex items-center space-x-3 grayscale hover:grayscale-0 transition-all opacity-60 hover:opacity-100">
+                            <i class="fas fa-bolt text-4xl text-gray-600"></i>
+                            <span class="text-xl font-semibold text-gray-700">EGO Power</span>
+                        </div>
+                        <div class="flex items-center space-x-3 grayscale hover:grayscale-0 transition-all opacity-60 hover:opacity-100">
+                            <i class="fas fa-store text-4xl text-gray-600"></i>
+                            <span class="text-xl font-semibold text-gray-700">Retail Co</span>
+                        </div>
+                        <div class="flex items-center space-x-3 grayscale hover:grayscale-0 transition-all opacity-60 hover:opacity-100">
+                            <i class="fas fa-gem text-4xl text-gray-600"></i>
+                            <span class="text-xl font-semibold text-gray-700">Luxury Brands</span>
+                        </div>
+                        <div class="flex items-center space-x-3 grayscale hover:grayscale-0 transition-all opacity-60 hover:opacity-100">
+                            <i class="fas fa-tshirt text-4xl text-gray-600"></i>
+                            <span class="text-xl font-semibold text-gray-700">Fashion Hub</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-20 pr-20">
+                        <div class="flex items-center space-x-3 grayscale hover:grayscale-0 transition-all opacity-60 hover:opacity-100">
+                            <i class="fas fa-car text-4xl text-gray-600"></i>
+                            <span class="text-xl font-semibold text-gray-700">Mercedes-Benz</span>
+                        </div>
+                        <div class="flex items-center space-x-3 grayscale hover:grayscale-0 transition-all opacity-60 hover:opacity-100">
+                            <i class="fas fa-bolt text-4xl text-gray-600"></i>
+                            <span class="text-xl font-semibold text-gray-700">EGO Power</span>
+                        </div>
+                        <div class="flex items-center space-x-3 grayscale hover:grayscale-0 transition-all opacity-60 hover:opacity-100">
+                            <i class="fas fa-store text-4xl text-gray-600"></i>
+                            <span class="text-xl font-semibold text-gray-700">Retail Co</span>
+                        </div>
+                        <div class="flex items-center space-x-3 grayscale hover:grayscale-0 transition-all opacity-60 hover:opacity-100">
+                            <i class="fas fa-gem text-4xl text-gray-600"></i>
+                            <span class="text-xl font-semibold text-gray-700">Luxury Brands</span>
+                        </div>
+                        <div class="flex items-center space-x-3 grayscale hover:grayscale-0 transition-all opacity-60 hover:opacity-100">
+                            <i class="fas fa-tshirt text-4xl text-gray-600"></i>
+                            <span class="text-xl font-semibold text-gray-700">Fashion Hub</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="redefine-hosting" class="py-24 bg-corefinity-light">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-corefinity-dark mb-4">Let Us Redefine Your eCommerce Hosting</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Experience unparalleled performance, security, and support tailored for your business growth</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div id="performance-card" class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-rocket text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-corefinity-dark mb-4">Performance</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Lightning-fast load times with optimized infrastructure. Our platform delivers sub-second response times and handles peak traffic effortlessly.</p>
+                    <a href="#" class="inline-flex items-center space-x-2 text-corefinity-blue font-semibold hover:text-blue-700 transition-colors group">
+                        <span>Learn More</span>
+                        <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+                
+                <div id="scalability-card" class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-chart-line text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-corefinity-dark mb-4">Scalability</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Seamlessly scale from startup to enterprise. Auto-scaling infrastructure adapts to your traffic patterns and business growth.</p>
+                    <a href="#" class="inline-flex items-center space-x-2 text-corefinity-blue font-semibold hover:text-blue-700 transition-colors group">
+                        <span>Learn More</span>
+                        <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+                
+                <div id="security-card" class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-shield-alt text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-corefinity-dark mb-4">Security</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Enterprise-grade security with PCI DSS compliance. Advanced DDoS protection, WAF, and 24/7 security monitoring.</p>
+                    <a href="#" class="inline-flex items-center space-x-2 text-corefinity-blue font-semibold hover:text-blue-700 transition-colors group">
+                        <span>Learn More</span>
+                        <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+                
+                <div id="support-card" class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-headset text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-corefinity-dark mb-4">Support</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">24/7/365 UK-based expert support. Direct access to senior engineers with an average 7-minute emergency response time.</p>
+                    <a href="#" class="inline-flex items-center space-x-2 text-corefinity-blue font-semibold hover:text-blue-700 transition-colors group">
+                        <span>Learn More</span>
+                        <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="case-studies" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex items-end justify-between mb-12">
+                <div>
+                    <h2 class="text-4xl font-bold text-corefinity-dark mb-4">Case Studies</h2>
+                    <p class="text-xl text-gray-600">Real results from real businesses</p>
+                </div>
+                <a href="#" class="hidden lg:inline-flex items-center space-x-2 text-corefinity-blue font-semibold hover:text-blue-700 transition-colors group">
+                    <span>View All Case Studies</span>
+                    <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-8">
+                <div id="ego-case-study" class="group relative bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
+                    <div class="absolute inset-0 opacity-20">
+                        <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/1d0a63f08a-f8b785dbb34b892476c4.png" alt="modern outdoor power tools, professional lawn equipment, green energy battery system" />
+                    </div>
+                    <div class="relative p-10">
+                        <div class="flex items-center space-x-4 mb-6">
+                            <div class="w-16 h-16 bg-white rounded-xl flex items-center justify-center">
+                                <i class="fas fa-bolt text-3xl text-yellow-500"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-white">EGO Power+</h3>
+                                <p class="text-gray-400">Outdoor Power Equipment</p>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-4 mb-8">
+                            <p class="text-gray-300 leading-relaxed">EGO Power+ needed a robust hosting solution to handle their growing eCommerce platform during peak seasonal demand.</p>
+                            
+                            <div class="grid grid-cols-3 gap-4 py-6 border-y border-gray-700">
+                                <div>
+                                    <div class="text-3xl font-bold text-green-400">3x</div>
+                                    <div class="text-sm text-gray-400">Faster Load Times</div>
+                                </div>
+                                <div>
+                                    <div class="text-3xl font-bold text-green-400">99.99%</div>
+                                    <div class="text-sm text-gray-400">Uptime</div>
+                                </div>
+                                <div>
+                                    <div class="text-3xl font-bold text-green-400">45%</div>
+                                    <div class="text-sm text-gray-400">Cost Reduction</div>
+                                </div>
+                            </div>
+                            
+                            <p class="text-gray-300 leading-relaxed">By migrating to Corefinity's optimized Magento hosting, EGO achieved exceptional performance improvements and significant cost savings.</p>
+                        </div>
+                        
+                        <a href="#" class="inline-flex items-center space-x-2 bg-white text-corefinity-dark px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            <span>Read Full Case Study</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div id="mercedes-case-study" class="group relative bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
+                    <div class="absolute inset-0 opacity-20">
+                        <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/82be92bfff-72913d3860ddefb86d9c.png" alt="luxury mercedes benz car showroom, premium automotive dealership, modern elegant design" />
+                    </div>
+                    <div class="relative p-10">
+                        <div class="flex items-center space-x-4 mb-6">
+                            <div class="w-16 h-16 bg-white rounded-xl flex items-center justify-center">
+                                <i class="fas fa-car text-3xl text-gray-800"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-white">Mercedes-Benz</h3>
+                                <p class="text-gray-400">Luxury Automotive</p>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-4 mb-8">
+                            <p class="text-gray-300 leading-relaxed">Mercedes-Benz required enterprise-grade hosting with exceptional security and performance for their premium eCommerce experience.</p>
+                            
+                            <div class="grid grid-cols-3 gap-4 py-6 border-y border-gray-700">
+                                <div>
+                                    <div class="text-3xl font-bold text-green-400">0.8s</div>
+                                    <div class="text-sm text-gray-400">Page Load Time</div>
+                                </div>
+                                <div>
+                                    <div class="text-3xl font-bold text-green-400">100%</div>
+                                    <div class="text-sm text-gray-400">PCI Compliant</div>
+                                </div>
+                                <div>
+                                    <div class="text-3xl font-bold text-green-400">5M+</div>
+                                    <div class="text-sm text-gray-400">Monthly Visitors</div>
+                                </div>
+                            </div>
+                            
+                            <p class="text-gray-300 leading-relaxed">Our enterprise hosting solution delivers the performance and reliability expected by a luxury brand of Mercedes-Benz's caliber.</p>
+                        </div>
+                        
+                        <a href="#" class="inline-flex items-center space-x-2 bg-white text-corefinity-dark px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            <span>Read Full Case Study</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12 lg:hidden">
+                <a href="#" class="inline-flex items-center space-x-2 text-corefinity-blue font-semibold hover:text-blue-700 transition-colors">
+                    <span>View All Case Studies</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="key-metrics" class="py-24 bg-gradient-to-br from-corefinity-blue to-blue-700">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white mb-4">Key Metrics That Matter</h2>
+                <p class="text-xl text-blue-100">Numbers that showcase our commitment to excellence</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div id="uptime-metric" class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-10 text-center hover:bg-white/15 transition-all duration-300 group">
+                    <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-check-circle text-4xl text-corefinity-blue"></i>
+                    </div>
+                    <div class="text-5xl font-bold text-white mb-3">99.99%</div>
+                    <div class="text-xl text-blue-100 font-semibold mb-2">Uptime Average</div>
+                    <p class="text-blue-200">Industry-leading reliability with guaranteed SLA and proactive monitoring</p>
+                </div>
+                
+                <div id="support-metric" class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-10 text-center hover:bg-white/15 transition-all duration-300 group">
+                    <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-headset text-4xl text-corefinity-blue"></i>
+                    </div>
+                    <div class="text-5xl font-bold text-white mb-3">24/7/365</div>
+                    <div class="text-xl text-blue-100 font-semibold mb-2">UK Based Global Support</div>
+                    <p class="text-blue-200">Expert engineers available around the clock, whenever you need assistance</p>
+                </div>
+                
+                <div id="response-metric" class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-10 text-center hover:bg-white/15 transition-all duration-300 group">
+                    <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-clock text-4xl text-corefinity-blue"></i>
+                    </div>
+                    <div class="text-5xl font-bold text-white mb-3">7 Minutes</div>
+                    <div class="text-xl text-blue-100 font-semibold mb-2">Average Emergency Response</div>
+                    <p class="text-blue-200">Rapid response times ensuring minimal downtime and quick issue resolution</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="what-you-get" class="py-24 bg-corefinity-light">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-corefinity-dark mb-4">What You Get with Corefinity</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Comprehensive hosting solutions with enterprise-grade features and developer-friendly tools</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div id="feature-magento" class="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 group hover:-translate-y-1">
+                    <div class="w-full h-40 mb-6 overflow-hidden rounded-lg">
+                        <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/708efeaadd-ce68d869909fe7268b24.png" alt="magento ecommerce platform dashboard, orange branding, professional interface" />
+                    </div>
+                    <h3 class="text-lg font-bold text-corefinity-dark mb-2">Magento & Adobe Commerce Specialists</h3>
+                    <p class="text-gray-600 text-sm">Expert-level Magento hosting with optimized configurations and certified engineers</p>
+                </div>
+                
+                <div id="feature-gdpr" class="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 group hover:-translate-y-1">
+                    <div class="w-full h-40 mb-6 overflow-hidden rounded-lg">
+                        <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/7277528dbf-69c3dcf72e393999c513.png" alt="GDPR compliance shield, data protection, security certificate, blue professional design" />
+                    </div>
+                    <h3 class="text-lg font-bold text-corefinity-dark mb-2">GDPR Compliant Processes</h3>
+                    <p class="text-gray-600 text-sm">Full GDPR compliance with documented processes and data handling procedures</p>
+                </div>
+                
+                <div id="feature-engineers" class="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 group hover:-translate-y-1">
+                    <div class="w-full h-40 mb-6 overflow-hidden rounded-lg">
+                        <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/6361ca2ef8-ef9fbfebdc232eedc9a9.png" alt="professional engineers working on servers, technical support team, modern office" />
+                    </div>
+                    <h3 class="text-lg font-bold text-corefinity-dark mb-2">Direct Access to Engineers</h3>
+                    <p class="text-gray-600 text-sm">No first-line filters - speak directly with senior engineers who understand your needs</p>
+                </div>
+                
+                <div id="feature-control-panel" class="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 group hover:-translate-y-1">
+                    <div class="w-full h-40 mb-6 overflow-hidden rounded-lg">
+                        <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/7eba73d184-a07602049962dd2f3eac.png" alt="modern control panel interface, CI/CD pipeline dashboard, blue technology theme" />
+                    </div>
+                    <h3 class="text-lg font-bold text-corefinity-dark mb-2">Control Panel with CI/CD Pipelines</h3>
+                    <p class="text-gray-600 text-sm">Advanced control panel with integrated deployment pipelines for seamless updates</p>
+                </div>
+                
+                <div id="feature-reviews" class="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 group hover:-translate-y-1">
+                    <div class="w-full h-40 mb-6 overflow-hidden rounded-lg">
+                        <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/31e0573b7c-175a81ea9678b8fc6fef.png" alt="performance monitoring dashboard, analytics graphs, infrastructure review meeting" />
+                    </div>
+                    <h3 class="text-lg font-bold text-corefinity-dark mb-2">Scheduled Infrastructure Reviews</h3>
+                    <p class="text-gray-600 text-sm">Regular performance and infrastructure reviews to optimize your hosting environment</p>
+                </div>
+                
+                <div id="feature-security" class="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 group hover:-translate-y-1">
+                    <div class="w-full h-40 mb-6 overflow-hidden rounded-lg">
+                        <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/5560f3b1b6-54791071f8289972d2aa.png" alt="cybersecurity shield, security audit documents, evidence packs, professional security" />
+                    </div>
+                    <h3 class="text-lg font-bold text-corefinity-dark mb-2">Security First Culture</h3>
+                    <p class="text-gray-600 text-sm">Comprehensive security measures with detailed evidence packs available on request</p>
+                </div>
+                
+                <div id="feature-incident" class="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 group hover:-translate-y-1">
+                    <div class="w-full h-40 mb-6 overflow-hidden rounded-lg">
+                        <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/f70c762486-5e38efa42bbc5857031f.png" alt="incident management workflow, documented runbooks, post-mortem analysis reports" />
+                    </div>
+                    <h3 class="text-lg font-bold text-corefinity-dark mb-2">Post-Incident Reviews</h3>
+                    <p class="text-gray-600 text-sm">Detailed post-incident reviews with documented runbooks for continuous improvement</p>
+                </div>
+                
+                <div id="feature-observability" class="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 group hover:-translate-y-1">
+                    <div class="w-full h-40 mb-6 overflow-hidden rounded-lg">
+                        <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/6bf7972f08-ba77b94d01a590ea1c3c.png" alt="APM monitoring dashboard, log analysis interface, observability tools, real-time metrics" />
+                    </div>
+                    <h3 class="text-lg font-bold text-corefinity-dark mb-2">Observability & APM Access</h3>
+                    <p class="text-gray-600 text-sm">Full access to logs and APM tools for faster diagnosis and proactive monitoring</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="performance-audits" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center space-x-2 bg-green-100 rounded-full px-4 py-2 mb-6">
+                    <i class="fas fa-trophy text-green-600"></i>
+                    <span class="text-green-600 text-sm font-semibold">Proof Beats Promises</span>
+                </div>
+                <h2 class="text-4xl font-bold text-corefinity-dark mb-4">Performance Audits</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Explore our performance audits against leading competitors. We are faster 100% of the time.</p>
+            </div>
+            
+            <div class="bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead>
+                            <tr class="bg-gradient-to-r from-corefinity-blue to-blue-600 text-white">
+                                <th class="px-6 py-4 text-left font-semibold">Environment</th>
+                                <th class="px-6 py-4 text-center font-semibold">Home (Uncached)</th>
+                                <th class="px-6 py-4 text-center font-semibold">Home (Cached)</th>
+                                <th class="px-6 py-4 text-center font-semibold">Category (Uncached)</th>
+                                <th class="px-6 py-4 text-center font-semibold">Product (Uncached)</th>
+                                <th class="px-6 py-4 text-center font-semibold">Basket</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr class="bg-green-50 hover:bg-green-100 transition-colors">
+                                <td class="px-6 py-4 font-bold text-corefinity-dark flex items-center space-x-2">
+                                    <i class="fas fa-bolt text-corefinity-blue"></i>
+                                    <span>Corefinity</span>
+                                </td>
+                                <td class="px-6 py-4 text-center font-semibold text-green-600">0.42s</td>
+                                <td class="px-6 py-4 text-center font-semibold text-green-600">0.08s</td>
+                                <td class="px-6 py-4 text-center font-semibold text-green-600">0.68s</td>
+                                <td class="px-6 py-4 text-center font-semibold text-green-600">0.55s</td>
+                                <td class="px-6 py-4 text-center font-semibold text-green-600">0.71s</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 transition-colors">
+                                <td class="px-6 py-4 font-medium text-gray-700">Competitor A</td>
+                                <td class="px-6 py-4 text-center text-gray-600">1.24s</td>
+                                <td class="px-6 py-4 text-center text-gray-600">0.32s</td>
+                                <td class="px-6 py-4 text-center text-gray-600">2.15s</td>
+                                <td class="px-6 py-4 text-center text-gray-600">1.89s</td>
+                                <td class="px-6 py-4 text-center text-gray-600">2.43s</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 transition-colors">
+                                <td class="px-6 py-4 font-medium text-gray-700">Competitor B</td>
+                                <td class="px-6 py-4 text-center text-gray-600">1.56s</td>
+                                <td class="px-6 py-4 text-center text-gray-600">0.41s</td>
+                                <td class="px-6 py-4 text-center text-gray-600">2.67s</td>
+                                <td class="px-6 py-4 text-center text-gray-600">2.34s</td>
+                                <td class="px-6 py-4 text-center text-gray-600">2.89s</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 transition-colors">
+                                <td class="px-6 py-4 font-medium text-gray-700">Competitor C</td>
+                                <td class="px-6 py-4 text-center text-gray-600">1.78s</td>
+                                <td class="px-6 py-4 text-center text-gray-600">0.38s</td>
+                                <td class="px-6 py-4 text-center text-gray-600">3.12s</td>
+                                <td class="px-6 py-4 text-center text-gray-600">2.76s</td>
+                                <td class="px-6 py-4 text-center text-gray-600">3.21s</td>
+                            </tr>
+                            <tr class="bg-corefinity-blue/5 border-t-2 border-corefinity-blue">
+                                <td class="px-6 py-4 font-bold text-corefinity-dark">Performance Difference</td>
+                                <td class="px-6 py-4 text-center font-bold text-green-600">3x Faster</td>
+                                <td class="px-6 py-4 text-center font-bold text-green-600">4x Faster</td>
+                                <td class="px-6 py-4 text-center font-bold text-green-600">3.5x Faster</td>
+                                <td class="px-6 py-4 text-center font-bold text-green-600">3.8x Faster</td>
+                                <td class="px-6 py-4 text-center font-bold text-green-600">3.6x Faster</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-flex items-center space-x-2 bg-corefinity-blue text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors shadow-lg shadow-corefinity-blue/30">
+                    <span>View All Performance Audits</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="client-testimonials" class="py-24 bg-gradient-to-br from-gray-900 to-corefinity-dark">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white mb-4">Watch Our Client Testimonials</h2>
+                <p class="text-xl text-gray-300">Hear directly from businesses that trust Corefinity</p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-8 mb-12">
+                <div id="testimonial-video-1" class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden shadow-2xl group hover:border-white/20 transition-all">
+                    <div class="aspect-video bg-gray-800 relative overflow-hidden">
+                        <img class="w-full h-full object-cover opacity-60" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/70694ad614-dd2c8fdd8ba763ac8886.png" alt="professional business person giving testimonial interview, modern office background, corporate video" />
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <button class="w-20 h-20 bg-corefinity-blue rounded-full flex items-center justify-center hover:bg-blue-600 transition-all group-hover:scale-110 shadow-2xl">
+                                <i class="fas fa-play text-white text-2xl ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <img src="https://leanlivingjourney.com/wp-content/uploads/2025/10/images.jpeg" class="w-14 h-14 rounded-full border-2 border-corefinity-blue" alt="Client">
+                            <div>
+                                <h3 class="text-lg font-bold text-white">John Anderson</h3>
+                                <p class="text-gray-400">CTO, EGO Power+</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-300">"Corefinity transformed our hosting infrastructure. The performance improvements were immediate and substantial."</p>
+                    </div>
+                </div>
+                
+                <div id="testimonial-video-2" class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden shadow-2xl group hover:border-white/20 transition-all">
+                    <div class="aspect-video bg-gray-800 relative overflow-hidden">
+                        <img class="w-full h-full object-cover opacity-60" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/d5890435c9-2e35e96af41db4b7023e.png" alt="female executive giving video testimonial, luxury corporate office, professional lighting" />
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <button class="w-20 h-20 bg-corefinity-blue rounded-full flex items-center justify-center hover:bg-blue-600 transition-all group-hover:scale-110 shadow-2xl">
+                                <i class="fas fa-play text-white text-2xl ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <img src="https://leanlivingjourney.com/wp-content/uploads/2025/10/images-4.jpeg" class="w-14 h-14 rounded-full border-2 border-corefinity-blue" alt="Client">
+                            <div>
+                                <h3 class="text-lg font-bold text-white">Sarah Mitchell</h3>
+                                <p class="text-gray-400">Head of Digital, Mercedes-Benz</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-300">"The level of support and expertise from Corefinity is unmatched. They truly understand enterprise needs."</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex items-center justify-center space-x-4">
+                <button class="w-12 h-12 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full flex items-center justify-center hover:bg-white/20 transition-all">
+                    <i class="fas fa-chevron-left text-white"></i>
+                </button>
+                <div class="flex space-x-2">
+                    <div class="w-2 h-2 bg-corefinity-blue rounded-full"></div>
+                    <div class="w-2 h-2 bg-white/30 rounded-full"></div>
+                    <div class="w-2 h-2 bg-white/30 rounded-full"></div>
+                    <div class="w-2 h-2 bg-white/30 rounded-full"></div>
+                </div>
+                <button class="w-12 h-12 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full flex items-center justify-center hover:bg-white/20 transition-all">
+                    <i class="fas fa-chevron-right text-white"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="technical-details" class="py-24 bg-corefinity-light">
+        <div class="container mx-auto px-6">
+            <div class="max-w-5xl mx-auto">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div class="inline-flex items-center space-x-2 bg-corefinity-blue/10 rounded-full px-4 py-2 mb-6">
+                            <i class="fas fa-book text-corefinity-blue"></i>
+                            <span class="text-corefinity-blue text-sm font-semibold">Documentation</span>
+                        </div>
+                        
+                        <h2 class="text-4xl font-bold text-corefinity-dark mb-6">Need Technical Details?</h2>
+                        
+                        <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                            Access comprehensive documentation, technical specifications, and implementation guides. Our detailed support docs cover everything from initial setup to advanced configurations, ensuring you have all the information you need.
+                        </p>
+                        
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-start space-x-3">
+                                <i class="fas fa-check-circle text-corefinity-blue text-xl mt-1"></i>
+                                <div>
+                                    <div class="font-semibold text-corefinity-dark">API Documentation</div>
+                                    <div class="text-gray-600">Complete API reference with examples</div>
+                                </div>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <i class="fas fa-check-circle text-corefinity-blue text-xl mt-1"></i>
+                                <div>
+                                    <div class="font-semibold text-corefinity-dark">Integration Guides</div>
+                                    <div class="text-gray-600">Step-by-step platform integration tutorials</div>
+                                </div>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <i class="fas fa-check-circle text-corefinity-blue text-xl mt-1"></i>
+                                <div>
+                                    <div class="font-semibold text-corefinity-dark">Best Practices</div>
+                                    <div class="text-gray-600">Performance optimization recommendations</div>
+                                </div>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <i class="fas fa-check-circle text-corefinity-blue text-xl mt-1"></i>
+                                <div>
+                                    <div class="font-semibold text-corefinity-dark">Troubleshooting</div>
+                                    <div class="text-gray-600">Common issues and solutions</div>
+                                </div>
+                            </li>
+                        </ul>
+                        
+                        <a href="#" class="inline-flex items-center space-x-2 bg-corefinity-blue text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors shadow-lg shadow-corefinity-blue/30">
+                            <i class="fas fa-book-open"></i>
+                            <span>View Support Docs</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-br from-corefinity-blue/20 to-purple-600/20 rounded-3xl blur-3xl"></div>
+                        <div class="relative bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden">
+                            <div class="bg-gradient-to-r from-gray-800 to-gray-900 px-6 py-4 flex items-center space-x-2">
+                                <div class="flex space-x-2">
+                                    <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                                    <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                                    <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                                </div>
+                                <div class="flex-1 text-center text-gray-400 text-sm font-mono">documentation.corefinity.com</div>
+                            </div>
+                            <div class="p-6 bg-gray-50">
+                                <div class="space-y-3">
+                                    <div class="flex items-center space-x-3 p-3 bg-white rounded-lg border border-gray-200 hover:border-corefinity-blue transition-colors cursor-pointer">
+                                        <i class="fas fa-folder text-corefinity-blue text-xl"></i>
+                                        <span class="font-semibold text-gray-700">Getting Started</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3 p-3 bg-white rounded-lg border border-gray-200 hover:border-corefinity-blue transition-colors cursor-pointer">
+                                        <i class="fas fa-folder text-corefinity-blue text-xl"></i>
+                                        <span class="font-semibold text-gray-700">API Reference</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3 p-3 bg-white rounded-lg border border-gray-200 hover:border-corefinity-blue transition-colors cursor-pointer">
+                                        <i class="fas fa-folder text-corefinity-blue text-xl"></i>
+                                        <span class="font-semibold text-gray-700">Platform Guides</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3 p-3 bg-white rounded-lg border border-gray-200 hover:border-corefinity-blue transition-colors cursor-pointer">
+                                        <i class="fas fa-folder text-corefinity-blue text-xl"></i>
+                                        <span class="font-semibold text-gray-700">Security & Compliance</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3 p-3 bg-white rounded-lg border border-gray-200 hover:border-corefinity-blue transition-colors cursor-pointer">
+                                        <i class="fas fa-folder text-corefinity-blue text-xl"></i>
+                                        <span class="font-semibold text-gray-700">Troubleshooting</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cta-section" class="py-24 bg-gradient-to-r from-corefinity-blue to-blue-700 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute inset-0" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 40px 40px;"></div>
+        </div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-5xl font-bold text-white mb-6">Ready to Transform Your Hosting?</h2>
+                <p class="text-xl text-blue-100 mb-12 leading-relaxed">
+                    Join hundreds of businesses that trust Corefinity for their mission-critical hosting needs. Experience the difference of hosting built by developers, for developers.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 mb-12">
+                    <a href="#" class="w-full sm:w-auto bg-white text-corefinity-blue px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center justify-center space-x-2 shadow-xl">
+                        <i class="fas fa-comments"></i>
+                        <span>Chat to an Expert</span>
+                    </a>
+                    <a href="#" class="w-full sm:w-auto bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/20 transition-colors inline-flex items-center justify-center space-x-2 border-2 border-white/30">
+                        <i class="fas fa-phone"></i>
+                        <span>Schedule a Call</span>
+                    </a>
+                </div>
+                
+                <div class="flex items-center justify-center space-x-8 text-white">
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-check-circle text-green-300"></i>
+                        <span>No Credit Card Required</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-check-circle text-green-300"></i>
+                        <span>Free Migration</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-check-circle text-green-300"></i>
+                        <span>24/7 Support</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer id="footer" class="bg-gradient-to-br from-gray-900 via-corefinity-dark to-gray-900 text-white pt-20 pb-10">
+    <div class="container mx-auto px-6">
+        <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
+            <div class="lg:col-span-2">
+                <div class="flex items-center space-x-3 mb-6">
+                    <div class="w-12 h-12 bg-corefinity-blue rounded-xl flex items-center justify-center">
+                        <span class="text-white font-bold text-2xl">C</span>
+                    </div>
+                    <span class="text-2xl font-bold">Corefinity</span>
+                </div>
+                <p class="text-gray-400 mb-6 leading-relaxed">
+                    Platform agnostic cloud and infrastructure specialists, modernizing hosting for mission-critical and eCommerce applications.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#" class="w-10 h-10 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg flex items-center justify-center hover:bg-corefinity-blue hover:border-corefinity-blue transition-all">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg flex items-center justify-center hover:bg-corefinity-blue hover:border-corefinity-blue transition-all">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg flex items-center justify-center hover:bg-corefinity-blue hover:border-corefinity-blue transition-all">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg flex items-center justify-center hover:bg-corefinity-blue hover:border-corefinity-blue transition-all">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div>
+                <h3 class="text-lg font-bold mb-6">Solutions</h3>
+                <ul class="space-y-3">
+                    <li><a href="#" class="text-gray-400 hover:text-corefinity-blue transition-colors">Magento Hosting</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-corefinity-blue transition-colors">Laravel Hosting</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-corefinity-blue transition-colors">Shopware Hosting</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-corefinity-blue transition-colors">WordPress Hosting</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-corefinity-blue transition-colors">Cloud Hosting</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3 class="text-lg font-bold mb-6">Company</h3>
+                <ul class="space-y-3">
+                    <li><a href="#" class="text-gray-400 hover:text-corefinity-blue transition-colors">About Us</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-corefinity-blue transition-colors">Case Studies</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-corefinity-blue transition-colors">Performance</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-corefinity-blue transition-colors">Agency Partners</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-corefinity-blue transition-colors">Careers</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3 class="text-lg font-bold mb-6">Support</h3>
+                <ul class="space-y-3">
+                    <li><a href="#" class="text-gray-400 hover:text-corefinity-blue transition-colors">Documentation</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-corefinity-blue transition-colors">API Reference</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-corefinity-blue transition-colors">Status Page</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-corefinity-blue transition-colors">Contact Support</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-corefinity-blue transition-colors">Community</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="border-t border-white/10 pt-8">
+            <div class="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
+                <div class="text-gray-400 text-sm">
+                    © 2025 Corefinity. All rights reserved.
+                </div>
+                <div class="flex items-center space-x-6 text-sm">
+                    <a href="#" class="text-gray-400 hover:text-corefinity-blue transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-corefinity-blue transition-colors">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-corefinity-blue transition-colors">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+window.addEventListener('load', function() {
+    const megaMenuTriggers = document.querySelectorAll('.group');
+    
+    megaMenuTriggers.forEach(trigger => {
+        const megaMenu = trigger.querySelector('.mega-menu');
+        
+        if (megaMenu) {
+            trigger.addEventListener('mouseenter', () => {
+                megaMenu.classList.add('active');
+            });
+            
+            trigger.addEventListener('mouseleave', () => {
+                megaMenu.classList.remove('active');
+            });
+        }
+    });
+});
+</script>
+
+</body>
+</html>
